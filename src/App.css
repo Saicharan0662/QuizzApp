@@ -1,38 +1,289 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: rgb(250, 250, 250);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  height: 25vh;
+  background-color: black;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header h1 {
+  font-size: 7rem;
+  font-family: serif;
+  color: blue;
+  text-shadow: 0px 3px 5px #acacac;
+}
+
+.header h1:hover {
+  font-size: 7.5rem;
+  transition: 0.2s ease-out;
+}
+
+.details-cont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid red;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.details {
+  background-color: #0000b8;
+  color: white;
+  border-radius: 12px;
+  min-height: 47vh;
+  padding: 1.2rem;
+  margin: 2rem;
+  min-width: 60%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-direction: column;
+  box-shadow: 2px 2px 4px #2b00d0;
+}
+
+input {
+  display: flex;
+  flex-direction: row;
+  margin: 0.5rem;
+  width: 50%;
+  height: 1.867rem;
+  font-size: 1.12rem;
+  padding: 14px 0;
+}
+
+label {
+  font-size: 1.25rem;
+}
+.input_cont {
+  display: flex;
+  flex-direction: row;
+  margin: 1.012rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.d-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
+  padding: 37px;
+  height: 59vh;
+  width: 30%;
+  margin: 9px;
+  background-color: #0000b8;
+  box-shadow: 2px 2px 9px grey;
+  font-size: 4rem;
+}
+.d-left:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-out;
+  transform: scale(1.0122);
 }
 
-.App-link {
-  color: #61dafb;
+.toggle_cont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input_cont input {
+  width: 356px;
+  font-size: 1rem;
+}
+
+.btn {
+  width: 133px;
+  height: 40px;
+  padding: 9px;
+  margin: 0px 6px;
+}
+
+.btn-add {
+  background-color: rgb(211, 58, 96);
+  border-radius: 5px;
+}
+.btn-add:hover {
+  background-color: rgb(100, 15, 26);
+}
+.btn-create {
+  background-color: rgb(70, 255, 70);
+  border-radius: 5px;
+}
+.btn-create:hover {
+  background-color: rgb(16, 109, 16);
+}
+
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+.mcq-cont {
+  margin: 0 34px;
+}
+
+.question{
+  margin-left: 200px;
+  margin-top: 9px;
+  /* text-align: center; */
+}
+
+.q-cont {
+  margin-left: 57px;
+}
+
+.radio-cont {
+  font-size: 13px;
+}
+
+.radio-cont input {
+  display: inline-block;
+  position: relative;
+  top: 9px;
+}
+
+.btn-cont{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-submit {
+  background-color: black;
+  color: white;
+  margin-top: 34px;
+}
+
+.btn-submit:hover {
+  background-color: white;
+  color: black;
+}
+
+.result-box{
+  background: #4337ff;
+  margin: 45px 0 0 52px;
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+}
+
+.green{
+  color: rgb(95, 238, 95);
+}
+.yellow{
+  color: yellow;
+}
+.orange{
+  color: orange;
+}
+.red{
+  color: red;
+}
+
+@media screen and (max-width: 1235px) {
+  .details-cont {
+    flex-direction: column;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+  .d-left {
+    width: 65%;
+  }
+  .details {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width:918px) {
+  .question{
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 761px) {
+  .details {
+    margin: 0px;
+    width: 90%;
+  }
+  .d-left {
+    width: 80%;
+  }
+  .result-box{
+    margin: 45px 0 0 0;
+  }
+}
+
+@media screen and (max-width:601px) {
+  .result-box{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  .input_cont {
+    flex-direction: column;
+  }
+  .input_cont input {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 494px) {
+  .header {
+    justify-content: center;
+  }
+  .header h1 {
+    font-size: 5rem;
+  }
+  .header h1:hover {
+    transition: none;
+  }
+  .d-left {
+    font-size: 3rem;
+  }
+  .question{
+    margin-left: 2px;
+  }
+  input[type="radio"]{
+    margin-left: -91px;
+  }
+}
+@media screen and (max-width: 446px) {
+  .input_cont input {
+    max-width: 230px;
+  }
+}
+@media screen and (max-width: 321px) {
+  .header h1 {
+    font-size: 2.9rem;
+  }
+}
+
+@media screen and (max-width: 281px) {
+  .input_cont input {
+    width: 150px;
+  }
+  .d-left {
+    font-size: 1.9rem;
   }
 }
