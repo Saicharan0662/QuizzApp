@@ -6,6 +6,7 @@ const Mcq = ({ details, crr_option }) => {
   let list = [];
   const [data, setData] = useState([])
   const [percent, setPercent] = useState(0)
+  const [answered, setAnswered] = useState(false)
   const resultBox = useRef('')
 
   const createList = () => {
@@ -34,6 +35,7 @@ const Mcq = ({ details, crr_option }) => {
 
   let temp = []
   const handelSubmit = () => {
+    setAnswered(true)
     let score = 0;
     console.log(res);
     console.log(list);
@@ -83,18 +85,20 @@ const Mcq = ({ details, crr_option }) => {
       <div className="btn-cont">
         <button className="btn btn-submit" onClick={handelSubmit}>Submit</button>
       </div>
-      <div ref={resultBox} className="result-box">
-        {
-          data.map(result => {
-            return (
-              <div>
-                <li>{result}</li>
-              </div>
-            )
-          })
-        }
-        <h2 className={(percent > 80 ? "green" : percent < 50 && percent >= 40 ? "yellow" : percent < 40 ? "red" : "orange")}>Total percent scored: {percent} %</h2>
-      </div>
+      {answered &&
+        <div ref={resultBox} className="result-box">
+          {
+            data.map(result => {
+              return (
+                <div>
+                  <li>{result}</li>
+                </div>
+              )
+            })
+          }
+          <h2 className={(percent > 80 ? "green" : percent < 50 && percent >= 40 ? "yellow" : percent < 40 ? "red" : "orange")}>Total percent scored: {percent} %</h2>
+        </div>
+      }
     </>
   );
 };
